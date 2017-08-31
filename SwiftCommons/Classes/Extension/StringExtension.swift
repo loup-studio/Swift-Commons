@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     
-    public static func areNotBlank(strings: String...) -> Bool {
+    public static func areNotBlank(_ strings: String...) -> Bool {
         var isBlank = false
         strings.forEach {
             if $0.isBlank {
