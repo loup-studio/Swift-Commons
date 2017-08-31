@@ -12,13 +12,13 @@ import Keyboardy
 
 open class BaseControllerView: UIView, KeyboardStateDelegate {
     
-    var visibleRegion: UIView! {
+    public var visibleRegion: UIView! {
         didSet {
             setupConstraints()
         }
     }
     
-    private(set) var disposeBag: DisposeBag! = DisposeBag()
+    public private(set) var disposeBag: DisposeBag! = DisposeBag()
     
     required public init() {
         super.init(frame: CGRect.zero)
@@ -29,7 +29,7 @@ open class BaseControllerView: UIView, KeyboardStateDelegate {
         fatalError()
     }
     
-    func tearDown() {
+    open func tearDown() {
         disposeBag = nil
     }
     
