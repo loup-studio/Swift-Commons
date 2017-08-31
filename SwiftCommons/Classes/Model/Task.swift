@@ -65,7 +65,7 @@ extension Task {
     }
 }
 
-struct TaskConfiguration {
+public struct TaskConfiguration {
     static var apiHandler: ((Moya.Response) -> String?)?
     static var genericFailureMessage = ""
     static var notConnectedToInternetFailureMessage = ""
@@ -73,7 +73,7 @@ struct TaskConfiguration {
 }
 
 extension Task: Equatable {}
-func ==<T>(lhs: Task<T>, rhs: Task<T>) -> Bool {
+public func ==<T>(lhs: Task<T>, rhs: Task<T>) -> Bool {
     switch (lhs, rhs) {
         
     case (.idle, .idle):
