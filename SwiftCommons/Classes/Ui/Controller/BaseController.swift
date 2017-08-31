@@ -13,7 +13,7 @@ import Keyboardy
 
 open class BaseController<R: Reactor, V: BaseControllerView>: ReactorController<R> where V == R.View {
     
-    var contentView: V { return view as! V }
+    public var contentView: V { return view as! V }
     
     required public init() {
         super.init(nibName: nil, bundle: nil)
