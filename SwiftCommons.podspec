@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   # network
   s.dependency 'Alamofire'
-  s.dependency 'Moya/RxSwift'
+  s.dependency 'Moya/RxSwift', '~> 9.0.0-beta.1'
 
   # json
   s.dependency 'ObjectMapper'
