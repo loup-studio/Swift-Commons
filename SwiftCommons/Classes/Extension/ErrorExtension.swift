@@ -10,7 +10,7 @@ import Foundation
 
 extension Error {
     
-    var isNotConnectedToInternet: Bool {
+    public var isNotConnectedToInternet: Bool {
         if let error = self as? URLError, error.code  == URLError.Code.notConnectedToInternet {
             return true
         } else {

@@ -10,15 +10,15 @@ import Foundation
 
 extension String {
     
-    var isBlank: Bool {
+    public var isBlank: Bool {
         return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
-    var isNotBlank: Bool {
+    public var isNotBlank: Bool {
         return !isBlank
     }
     
-    func digitsOnly() -> String {
+    public func digitsOnly() -> String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }
 }

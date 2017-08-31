@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func setup() {
+    open func setup() {
         setupUI()
         setupConstraints()
     }
@@ -22,7 +22,7 @@ extension UIView {
 
 extension UITextField {
     
-    var horizontalPadding: Int {
+    public var horizontalPadding: Int {
         get { fatalError() }
         set {
             let padding = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: 0))

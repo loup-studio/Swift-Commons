@@ -10,7 +10,7 @@ import Foundation
 
 extension Collection where Iterator.Element: Any {
     
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return !isEmpty
     }
 }

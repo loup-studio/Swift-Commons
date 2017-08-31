@@ -11,7 +11,7 @@ import Reactored
 
 extension ReactorView {
 
-    func bind(state: State, if isActive: Bool) {
+    public func bind(state: State, if isActive: Bool) {
         if isActive {
             bind(state: state)
         }

@@ -13,12 +13,12 @@ import ObjectMapper
 
 extension ObservableType {
     
-    static func error(message: String) -> Observable<E> {
+    public static func error(message: String) -> Observable<E> {
         return Observable.error(AppError.generic(message: message))
     }
     
     
-    func asTask<T>(name: String = "", errorMessage: String = "") -> Observable<Task<T>> where Self.E == T {
+    public func asTask<T>(name: String = "", errorMessage: String = "") -> Observable<Task<T>> where Self.E == T {
         return self
             .map { Task.successful(result: $0) }
             .startWith(Task.running(progress: 0))
@@ -35,7 +35,7 @@ extension ObservableType {
 
 extension ObservableType where Self.E == Response {
     
-    func parse<E:BaseMappable>(toJson type: E.Type) -> Observable<E> {
+    public func parse<E:BaseMappable>(toJson type: E.Type) -> Observable<E> {
         return self.map { response in
             guard let json = Mapper<E>().map(JSONString: (try? response.mapString()) ?? "") else {
                 throw AppError.generic(message: "json parse failure")
@@ -44,7 +44,7 @@ extension ObservableType where Self.E == Response {
         }
     }
     
-    func parse<E:BaseMappable>(toJsonArrayOf: E.Type) -> Observable<[E]> {
+    public func parse<E:BaseMappable>(toJsonArrayOf: E.Type) -> Observable<[E]> {
         return self.map { response in
             guard let json = Mapper<E>().mapArray(JSONString: (try? response.mapString()) ?? "") else {
                 throw AppError.generic(message: "json parse failure")
@@ -56,7 +56,7 @@ extension ObservableType where Self.E == Response {
 
 extension PrimitiveSequence where Element == Response {
     
-    func normalize() -> Observable<Response> {
+    public func normalize() -> Observable<Response> {
         return self
             .asObservable()
             .filterSuccessfulStatusCodes()
