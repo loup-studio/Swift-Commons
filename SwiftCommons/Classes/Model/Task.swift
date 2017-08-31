@@ -10,7 +10,7 @@ import Foundation
 import Moya
 import RxSwift
 
-enum Task<T> {
+public enum Task<T> {
     case idle
     case running(progress: Int)
     case successful(result: T)

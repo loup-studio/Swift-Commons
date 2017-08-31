@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import Alertift
 
-struct TaskHelper {
+public struct TaskHelper {
     
     private init() {}
     

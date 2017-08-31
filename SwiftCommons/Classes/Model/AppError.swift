@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum AppError: Error {
+public enum AppError: Error {
     case generic(message: String)
 }

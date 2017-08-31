@@ -49,6 +49,9 @@ Pod::Spec.new do |s|
   # mortar
   s.dependency 'Mortar/MortarVFL'
 
+  # notification
+  s.dependency 'SwiftMessages'
+
 
   s.description      = <<-DESC
 Swift commons
