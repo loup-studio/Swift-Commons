@@ -13,11 +13,11 @@ public struct NotificationHelper {
     
     private init() {}
     
-    static func bind(error: String, if isActive: Bool) {
+    public static func bind(error: String, if isActive: Bool) {
         bind(errors: (isActive, error))
     }
     
-    static func bind(errors: (Bool, String)...) {
+    public static func bind(errors: (Bool, String)...) {
         if let error = errors.first(where: { $0.0 }) {
             show(error: error.1)
         } else {
@@ -25,7 +25,7 @@ public struct NotificationHelper {
         }
     }
     
-    static func show(error: String) {
+    public static func show(error: String) {
         let view = MessageView.viewFromNib(layout: .StatusLine)
         view.configureTheme(.error)
         view.configureContent(body: error)
@@ -33,7 +33,7 @@ public struct NotificationHelper {
         SwiftMessages.show(view: view)
     }
     
-    static func hide() {
+    public static func hide() {
         SwiftMessages.hide(id: "error")
     }
     

@@ -14,7 +14,7 @@ public struct TaskHelper {
     
     private init() {}
     
-    static func bind(tasks: Task<Any>...) -> Bool {
+    public static func bind(tasks: Task<Any>...) -> Bool {
         let activeTasks = tasks.filter { $0 != .idle }
         guard activeTasks.isNotEmpty else { return false }
         guard activeTasks.count == 1 else { fatalError("cannot bind multiple active tasks") }
@@ -22,7 +22,7 @@ public struct TaskHelper {
         return bind(task: activeTasks.first!)
     }
     
-    static func bind<T>(task: Task<T>) -> Bool {
+    public static func bind<T>(task: Task<T>) -> Bool {
         switch task {
         case .idle: return false
         case .running(let progress):
