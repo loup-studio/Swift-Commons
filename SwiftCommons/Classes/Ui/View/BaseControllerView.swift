@@ -8,8 +8,9 @@
 
 import UIKit
 import RxSwift
+import Keyboardy
 
-open class BaseControllerView: UIView {
+open class BaseControllerView: UIView, KeyboardStateDelegate {
     
     var visibleRegion: UIView! {
         didSet {
@@ -30,5 +31,20 @@ open class BaseControllerView: UIView {
     
     func tearDown() {
         disposeBag = nil
+    }
+    
+    
+    // KeyboardStateDelegate
+    
+    open func keyboardWillTransition(_ state: KeyboardState) {
+        
+    }
+    
+    public func keyboardTransitionAnimation(_ state: KeyboardState) {
+        layoutIfNeeded()
+    }
+    
+    public func keyboardDidTransition(_ state: KeyboardState) {
+        
     }
 }
