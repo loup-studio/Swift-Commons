@@ -1,6 +1,10 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'SwiftCommons_Example' do
+  pod 'Reactored', :git => 'https://github.com/loup-studio/Reactored-iOS'
+  pod 'Keyboardy', :git => 'https://github.com/lukaspili/Keyboardy'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD'
   pod 'SwiftCommons', :path => '../'
 
   target 'SwiftCommons_Tests' do
