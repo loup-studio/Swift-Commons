@@ -16,7 +16,7 @@ public enum Task<T> {
     case successful(result: T)
     case failure(message: String)
     
-    var isSuccessful: Bool {
+    public var isSuccessful: Bool {
         if case .successful(_) = self {
             return true
         } else {
@@ -24,7 +24,7 @@ public enum Task<T> {
         }
     }
     
-    var isFailure: Bool {
+    public var isFailure: Bool {
         if case .failure(_) = self {
             return true
         } else {
@@ -32,7 +32,7 @@ public enum Task<T> {
         }
     }
     
-    var isRunning: Bool {
+    public var isRunning: Bool {
         if case .running(_) = self {
             return true
         } else {
@@ -43,7 +43,7 @@ public enum Task<T> {
 
 extension Task {
     
-    mutating func resetOnTermination() {
+    public mutating func resetOnTermination() {
         switch self {
         case .successful(_): self = .idle
         case .failure(_): self = .idle
@@ -51,7 +51,7 @@ extension Task {
         }
     }
     
-    static func from<T>(error: Swift.Error, defaultMessage: String) -> Task<T> {
+    public static func from<T>(error: Swift.Error, defaultMessage: String) -> Task<T> {
         if let apiHandler = TaskConfiguration.apiHandler,
             let moya = error as? MoyaError,
             let response = moya.response,
@@ -66,10 +66,10 @@ extension Task {
 }
 
 public struct TaskConfiguration {
-    static var apiHandler: ((Moya.Response) -> String?)?
-    static var genericFailureMessage = ""
-    static var notConnectedToInternetFailureMessage = ""
-    static var failureAlertDismissButton = "OK"
+    public static var apiHandler: ((Moya.Response) -> String?)?
+    public static var genericFailureMessage = ""
+    public static var notConnectedToInternetFailureMessage = ""
+    public static var failureAlertDismissButton = "OK"
 }
 
 extension Task: Equatable {}
