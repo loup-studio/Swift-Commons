@@ -60,7 +60,7 @@ extension Task {
         } else if error.isNotConnectedToInternet {
             return Task<T>.failure(message: TaskConfiguration.notConnectedToInternetFailureMessage)
         } else {
-            return Task<T>.failure(message: TaskConfiguration.genericFailureMessage)
+            return Task<T>.failure(message: defaultMessage.isNotBlank ? defaultMessage : TaskConfiguration.genericFailureMessage)
         }
     }
 }
