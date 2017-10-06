@@ -26,19 +26,19 @@ Pod::Spec.new do |s|
   s.dependency 'Reactored'
 
   # reactive
-  s.dependency 'RxSwift'
-  s.dependency 'RxGesture'
-  s.dependency 'RxDataSources'
+  s.dependency 'RxSwift', '~> 3.6'
+  s.dependency 'RxGesture', '~> 1.1'
+  s.dependency 'RxDataSources', '~> 2.0'
 
   # network
   s.dependency 'Alamofire'
-  s.dependency 'Moya/RxSwift', '~> 9.0.0-beta.1'
+  s.dependency 'Moya/RxSwift', '~> 9.0'
 
   # json
   s.dependency 'ObjectMapper'
 
   # keyboard
-  s.dependency 'Keyboardy'
+  s.dependency 'Keyboardy', '~> 0.2'
 
   # hud
   s.dependency 'SVProgressHUD'

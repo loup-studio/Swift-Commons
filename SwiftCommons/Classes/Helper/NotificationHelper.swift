@@ -26,7 +26,7 @@ public struct NotificationHelper {
     }
     
     public static func show(error: String) {
-        let view = MessageView.viewFromNib(layout: .StatusLine)
+        let view = MessageView.viewFromNib(layout: .statusLine)
         view.configureTheme(.error)
         view.configureContent(body: error)
         view.id = "error"
