@@ -15,9 +15,9 @@ extension UIView {
         setupConstraints()
     }
     
-    open func setupUI() { }
+    @objc open func setupUI() { }
     
-    open func setupConstraints() { }
+    @objc open func setupConstraints() { }
 }
 
 extension UITextField {
