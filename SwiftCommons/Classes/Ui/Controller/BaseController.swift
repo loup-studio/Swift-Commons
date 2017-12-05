@@ -9,7 +9,6 @@
 import UIKit
 import Reactored
 import Mortar
-import Keyboardy
 
 open class BaseController<R: Reactor, V: BaseControllerView>: ReactorController<R> where V == R.View {
     
@@ -41,15 +40,5 @@ open class BaseController<R: Reactor, V: BaseControllerView>: ReactorController<
     override open func viewDidLoad() {
         super.viewDidLoad()
         contentView.visibleRegion = m_visibleRegion
-    }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        registerForKeyboardNotifications(contentView)
-    }
-    
-    override open func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unregisterFromKeyboardNotifications()
     }
 }
