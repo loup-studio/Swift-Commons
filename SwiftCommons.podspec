@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   # reactive
   s.dependency 'RxSwift', '~> 4'
-  s.dependency 'RxGesture', '~> 1.2'
+  s.dependency 'RxGesture', '~> 2'
   s.dependency 'RxDataSources', '~> 3.0'
 
   # network
