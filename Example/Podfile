@@ -5,10 +5,4 @@ target 'SwiftCommons_Example' do
   pod 'Reactored', :git => 'https://github.com/loup-studio/Reactored-iOS'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD'
   pod 'SwiftCommons', :path => '../'
-
-  target 'SwiftCommons_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
