@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Lukasz' => 'lukasz@intheloup.io' }
   s.source           = { :git => 'https://github.com/loup-studio/SwiftCommons.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.3'
   s.source_files = 'SwiftCommons/Classes/**/*'
   s.swift_versions = ['4.2']
 
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.dependency 'RxDataSources', '~> 3.0'
 
   # network
-  s.dependency 'Alamofire'
+  s.dependency 'Alamofire', '~> 4.9.1'
   s.dependency 'Moya/RxSwift', '~> 10.0'
 
   # json
