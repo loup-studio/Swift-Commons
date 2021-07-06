@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BaseView: UIView {
+open class BaseView2: UIView {
     
     required public init() {
         super.init(frame: CGRect.zero)
