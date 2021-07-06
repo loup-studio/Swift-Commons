@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftCommons'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A short description of SwiftCommons.'
 
   s.homepage         = 'https://github.com/loup-studio/SwiftCommons'
